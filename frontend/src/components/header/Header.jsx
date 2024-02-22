@@ -111,7 +111,10 @@ function Header(props) {
   //   if (storedTheme) {
   //     setTheme(storedTheme);
   //   }
-  const [theme, setTheme] = useState("light-them");
+  const [theme, setTheme] = useState(
+    // storedTheme === "dark-theme" ? "dark-theme" : "light-theme"
+    storedTheme === "light-theme" ? "dark-theme" : "light-theme"
+  );
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   useEffect(() => {
     localStorage.setItem("totalQuantity", JSON.stringify(totalQuantity));
